@@ -9,8 +9,8 @@ Pushswap.__index = Pushswap
 
 function Pushswap:new()
     self = setmetatable({}, Pushswap)
-    self.pile_a = Pile.new()
-    self.pile_b = Pile.new()
+    self.pile_a = Pile:new()
+    self.pile_b = Pile:new()
     return self
 end
 
