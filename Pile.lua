@@ -16,6 +16,7 @@ function Pile:display()
 end
 
 function Pile:add(x)
+    assert(x ~= nil, "add: nil value entered.")
     table.insert(self.data, 1, x)
 end
 
@@ -36,6 +37,8 @@ function Pile:get_last()
 end
 
 function Pile:swap(i1, i2)
+    assert(i1 >= 1 and i1 <= #self.data, "swap: x1 out of range.")
+    assert(i2 >= 1 and i2 <= #self.data, "swap: x2 out of range.")
     self.data[i1], self.data[i2] = self.data[i2], self.data[i1]
 end
 
