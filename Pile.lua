@@ -11,6 +11,12 @@ function Pile:new()
     return self
 end
 
+function Pile:newFrom(list)
+    self = setmetatable({}, Pile)
+    for i = #list, 1, -1 do self:add(list[i]) end
+    return self
+end
+
 function Pile:display()
     print(table.concat(self.data, " "))
 end
