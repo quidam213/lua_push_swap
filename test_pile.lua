@@ -3,16 +3,16 @@
 -- ============================================================================
 
 local lu = require("luaunit")
-local Pile = dofile("../Pile.lua")
+local Pile = require("Pile")
 
 function TestPile_new()
     local empty_pile = Pile:new()
     lu.assertEquals(empty_pile.data, {})
 end
 
-function TestPile_newFrom()
+function TestPile_new_from()
     local list = {-2, 0, 42, 3, 100}
-    local filled_pile = Pile:newFrom(list)
+    local filled_pile = Pile:new_from(list)
     lu.assertEquals(filled_pile.data, list)
 end
 
@@ -26,7 +26,7 @@ end
 
 function TestPile_pop()
     local list = {4, 3, 2, 1}
-    local test_pile = Pile:newFrom(list)
+    local test_pile = Pile:new_from(list)
     lu.assertEquals(test_pile:pop(), 4)
     lu.assertEquals(test_pile:pop(), 3)
     lu.assertEquals(test_pile:pop(), 2)
@@ -40,33 +40,33 @@ end
 
 function TestPile_get_at()
     local list = {4, 3, 2, 1}
-    local test_pile = Pile:newFrom(list)
+    local test_pile = Pile:new_from(list)
     lu.assertEquals(test_pile:get_at(3), 2)
     lu.assertEquals(test_pile:get_at(2), 3)
 end
 
 function TestPile_get_at_out_of_range()
     local list = {4, 3, 2, 1}
-    local test_pile = Pile:newFrom(list)
+    local test_pile = Pile:new_from(list)
     local success, _ = pcall(test_pile.get_at, test_pile, -10)
     assert(not success, "TestPile_get_at_out_of_range: failed")
 end
 
 function TestPile_get_first()
     local list = {4, 3, 2, 1}
-    local test_pile = Pile:newFrom(list)
+    local test_pile = Pile:new_from(list)
     lu.assertEquals(test_pile:get_first(), 4)
 end
 
 function TestPile_get_last()
     local list = {4, 3, 2, 1}
-    local test_pile = Pile:newFrom(list)
+    local test_pile = Pile:new_from(list)
     lu.assertEquals(test_pile:get_last(), 1)
 end
 
 function TestPile_swap()
     local list = {4, 3, 2, 1}
-    local test_pile = Pile:newFrom(list)
+    local test_pile = Pile:new_from(list)
     lu.assertEquals(test_pile:get_first(), 4)
     lu.assertEquals(test_pile:get_at(2), 3)
     test_pile:swap(1, 2)
@@ -84,7 +84,7 @@ end
 function TestPile_rotate()
     local list = {4, 3, 2, 1}
     local r_list = {3, 2, 1, 4}
-    local test_pile = Pile:newFrom(list)
+    local test_pile = Pile:new_from(list)
     lu.assertEquals(test_pile.data, list)
     test_pile:rotate()
     lu.assertEquals(test_pile.data, r_list)
@@ -100,7 +100,7 @@ end
 function TestPile_reverse_rotate()
     local list = {4, 3, 2, 1}
     local r_list = {1, 4, 3, 2}
-    local test_pile = Pile:newFrom(list)
+    local test_pile = Pile:new_from(list)
     lu.assertEquals(test_pile.data, list)
     test_pile:reverse_rotate()
     lu.assertEquals(test_pile.data, r_list)

@@ -14,6 +14,13 @@ function Pushswap:new()
     return obj
 end
 
+function Pushswap:new_from(list_a, list_b)
+    local obj = Pushswap:new()
+    obj.pile_a = Pile:new_from(list_a)
+    obj.pile_b = Pile:new_from(list_b)
+    return obj
+end
+
 function Pushswap:display()
     self.pile_a:display()
     self.pile_b:display()

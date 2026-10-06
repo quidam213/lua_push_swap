@@ -11,7 +11,7 @@ function Pile:new()
     return obj
 end
 
-function Pile:newFrom(list)
+function Pile:new_from(list)
     local obj = Pile:new()
     for i = #list, 1, -1 do obj:add(list[i]) end
     return obj
