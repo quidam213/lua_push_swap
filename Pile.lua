@@ -31,6 +31,7 @@ function Pile:pop()
 end
 
 function Pile:get_at(i)
+    assert(i >= 1 and i <= #self.data, "get_at: index out of range.")
     return self.data[i]
 end
 
