@@ -8,10 +8,10 @@ local Pushswap = {}
 Pushswap.__index = Pushswap
 
 function Pushswap:new()
-    self = setmetatable({}, Pushswap)
-    self.pile_a = Pile:new()
-    self.pile_b = Pile:new()
-    return self
+    local obj = setmetatable({}, Pushswap)
+    obj.pile_a = Pile:new()
+    obj.pile_b = Pile:new()
+    return obj
 end
 
 function Pushswap:display()

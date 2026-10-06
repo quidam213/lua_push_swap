@@ -6,15 +6,15 @@ local Pile = {}
 Pile.__index = Pile
 
 function Pile:new()
-    self = setmetatable({}, Pile)
-    self.data = {}
-    return self
+    local obj = setmetatable({}, Pile)
+    obj.data = {}
+    return obj
 end
 
 function Pile:newFrom(list)
-    self = setmetatable({}, Pile)
-    for i = #list, 1, -1 do self:add(list[i]) end
-    return self
+    local obj = Pile:new()
+    for i = #list, 1, -1 do obj:add(list[i]) end
+    return obj
 end
 
 function Pile:display()
