@@ -23,7 +23,6 @@ function Pushswap:sa()
     self.pile_a:swap(1, 2)
 end
 
-
 function Pushswap:sb()
     self.pile_b:swap(1, 2)
 end
