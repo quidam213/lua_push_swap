@@ -1,5 +1,5 @@
 -- ============================================================================
--- test_pile.lua | dam | 2026-10-06
+-- TestPile.lua | dam | 2026-10-06
 -- ============================================================================
 
 local lu = require("luaunit")
@@ -115,4 +115,6 @@ function TestPile:test_reverse_rotate_empty()
     lu.assertEquals(empty_pile.data, {})
 end
 
-os.exit(lu.LuaUnit.run())
+if arg and arg[0]:match("TestPile%.lua$") then
+    os.exit(lu.LuaUnit.run())
+end

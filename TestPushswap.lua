@@ -1,5 +1,5 @@
 -- ============================================================================
--- test_pushswap.lua | dam | 2026-10-06
+-- TestPushswap.lua | dam | 2026-10-06
 -- ============================================================================
 
 local lu = require("luaunit")
@@ -114,4 +114,6 @@ function TestPushswap:test_rrr()
     lu.assertEquals(ps.pile_b.data, {4, -4, 2, 0})
 end
 
-os.exit(lu.LuaUnit.run())
+if arg and arg[0]:match("TestPushswap%.lua$") then
+    os.exit(lu.LuaUnit.run())
+end
