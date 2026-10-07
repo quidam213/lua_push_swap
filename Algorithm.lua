@@ -12,7 +12,16 @@ function Algorithm:new(ps)
 end
 
 function Algorithm:is_sorted()
-    -- pass
+    if #self.ps.pile_b.data > 0 then
+        return false
+    end
+    local a = self.ps.pile_a.data
+    for i = 1, #a - 1, 1 do
+        if (a[i] > a[i + 1]) then
+            return false
+        end
+    end
+    return true
 end
 
 function Algorithm:sort()
