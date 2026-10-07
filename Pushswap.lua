@@ -73,4 +73,11 @@ function Pushswap:rrr()
     self:rrb()
 end
 
+function Pushswap:display()
+    print("--- PILE_A ---")
+    self.pile_a:display()
+    print("\n--- PILE_B ---")
+    self.pile_b:display()
+end
+
 return Pushswap
