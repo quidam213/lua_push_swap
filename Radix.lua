@@ -44,10 +44,13 @@ function Radix:setup()
 end
 
 function Radix:sort()
-    self:setup()
     local pa = self.ps.pile_a
     local pb = self.ps.pile_b
     local bit_idx = 0
+    if #pa.data <= 0 then
+        do return end
+    end
+    self:setup()
     while (not self:is_sorted()) do
         for _ = 1, #pa.data, 1 do
             local val = pa:get_first()
