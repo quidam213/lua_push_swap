@@ -11,4 +11,7 @@ local ps = Pushswap:new_from(list, {})
 local algo = Radix:new(ps)
 algo:sort()
 
+print(ps.logger:count())
+print(ps.logger:to_string())
+
 os.exit(0)

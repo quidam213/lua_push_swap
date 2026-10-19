@@ -62,7 +62,6 @@ function Radix:sort()
             self.ps:pa()
         end
         bit_idx = bit_idx + 1
-        self.ps:display()
     end
     self:set_offset(-self.offset)
 end
