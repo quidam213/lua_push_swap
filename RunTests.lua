@@ -6,5 +6,7 @@ local lu = require("luaunit")
 
 require("TestPile")
 require("TestPushswap")
+require("TestRadix")
+require("TestLogger")
 
 os.exit(lu.LuaUnit.run())
