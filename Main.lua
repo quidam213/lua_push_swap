@@ -9,8 +9,10 @@ local Radix = require("Radix")
 local list = ParseArguments(arg)
 local ps = Pushswap:new_from(list, {})
 local algo = Radix:new(ps)
+
 algo:sort()
 
+print(table.concat(list, " "))
 print(ps.logger:count())
 print(ps.logger:to_string())
 
